@@ -1,0 +1,19 @@
+name: Thử nghiệm đọc file README
+
+on:
+  push:
+      branches: ["main"]
+
+jobs:
+  thuc_hanh_doc_file:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Bước 1 - Xin chào
+          run: echo "Hello HUTECH!"
+
+        - name: Bước 2 - Tải code
+          uses: actions/checkout@v6.0.2
+
+        - name: Bước 3 - Đọc file
+          run: cat README.md
