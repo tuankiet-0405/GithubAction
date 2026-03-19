@@ -6,11 +6,9 @@ WORKDIR /app
 # Copy source code
 COPY pom.xml .
 COPY src ./src
-COPY mvnw .
-COPY .mvn ./.mvn
 
 # Build the application
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # Runtime stage
 FROM eclipse-temurin:23-jre-alpine
